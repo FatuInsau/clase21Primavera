@@ -10,11 +10,19 @@ let botonAnteriorPagina = document.getElementById("anterior");
 let botonSiguientePagina = document.getElementById("siguiente");
 let botonUltimaPagina = document.getElementById('ultimaPagina'); 
 
+let spanCantidadPersonajes = document.getElementById('cantidadPersonajes');
+
 let totalPersonajes;
 let paginaActual=1;
 
 // funcion para mostrar los personajes en el html
 function mostrarEnElHtml (arrPersonajes) {
+// Mostrar el total de personajes
+    // cuento la cantidad de elementos del arrPersonajes
+    let numeroPersonajes = arrPersonajes.length;
+    // Aca se lo agrego al span 
+    spanCantidadPersonajes.innerText= numeroPersonajes;
+
     // estamos limpiando lo que habia antes en el div
     divPersonajes.innerHTML='';
     // ahora le agregamos los personajes nuevos que queres mostrar
@@ -120,4 +128,4 @@ function ultimaPagina () {
 botonSiguientePagina.addEventListener('click',siguientePagina);
 botonAnteriorPagina.addEventListener('click',anteriorPagina);
 botonPrimeraPagina.addEventListener('click',primeraPagina);
-botonUltimaPagina.addEventListener('click', ultimaPagina)
+botonUltimaPagina.addEventListener('click', ultimaPagina);
